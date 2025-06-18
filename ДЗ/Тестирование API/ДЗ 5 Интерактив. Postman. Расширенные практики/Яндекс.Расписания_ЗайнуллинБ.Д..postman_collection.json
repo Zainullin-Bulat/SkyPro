@@ -1,0 +1,528 @@
+{
+	"info": {
+		"_postman_id": "35aa8c22-fc63-4c16-bb13-3656f4f39adb",
+		"name": "Яндекс.Расписания_ЗайнуллинБ.Д.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43611570"
+	},
+	"item": [
+		{
+			"name": "Расписание рейсов между станциями",
+			"item": [
+				{
+					"name": "Позитивная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check title from\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.search.from.title).to.eql(\"Казань-Пасс.\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check title to\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.search.to.title).to.eql(\"Москва (Казанский вокзал)\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/search/?apikey={{API_key}}&from=s9623141&to=s2000003&date={{date}}&transport_types=train",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "from",
+									"value": "s9623141"
+								},
+								{
+									"key": "to",
+									"value": "s2000003"
+								},
+								{
+									"key": "date",
+									"value": "{{date}}"
+								},
+								{
+									"key": "transport_types",
+									"value": "train",
+									"description": "plane, train, suburban, bus, water, helicopter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Негативная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/search/?apikey={{API_key}}&from=s9623141&to=&date={{date}}&transport_types=train",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "from",
+									"value": "s9623141"
+								},
+								{
+									"key": "to",
+									"value": ""
+								},
+								{
+									"key": "date",
+									"value": "{{date}}"
+								},
+								{
+									"key": "transport_types",
+									"value": "train",
+									"description": "plane, train, suburban, bus, water, helicopter"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Расписание рейсов по станции",
+			"item": [
+				{
+					"name": "Позитивная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"uid\"\r",
+									"var value = pm.response.json().schedule[0].thread.uid\r",
+									"pm.collectionVariables.set(key, value);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.station.title).to.eql(\"Казань-Пасс.\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/schedule/?station=s9623141&apikey={{API_key}}&date={{date}}&transport_types=train",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"schedule",
+								""
+							],
+							"query": [
+								{
+									"key": "station",
+									"value": "s9623141"
+								},
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "date",
+									"value": "{{date}}"
+								},
+								{
+									"key": "transport_types",
+									"value": "train",
+									"description": "plane, train, suburban, bus, water, helicopter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Негативная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/schedule/?station=s9623141&apikey={{API_key}}&date={{date}}&transport_types=trainn",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"schedule",
+								""
+							],
+							"query": [
+								{
+									"key": "station",
+									"value": "s9623141"
+								},
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "date",
+									"value": "{{date}}"
+								},
+								{
+									"key": "transport_types",
+									"value": "trainn",
+									"description": "plane, train, suburban, bus, water, helicopter"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Список станций следования",
+			"item": [
+				{
+					"name": "Позитивная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql(\"Волгоград — Нижневартовск\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/thread/?uid={{uid}}&apikey={{API_key}}&date={{date}}",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"thread",
+								""
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "{{uid}}"
+								},
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "date",
+									"value": "{{date}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Негативная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/thread/?uid={{uid}}&apikey={{API_key}}&date=05-25-2025",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"thread",
+								""
+							],
+							"query": [
+								{
+									"key": "uid",
+									"value": "{{uid}}"
+								},
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "date",
+									"value": "05-25-2025"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Список ближайших станций",
+			"item": [
+				{
+					"name": "Позитивная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check title from\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.stations[0].title).to.eql(\"Казань-Пасс.\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/nearest_stations/?lat=55.7887&lng=49.1221&apikey={{API_key}}&distance=50",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"nearest_stations",
+								""
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "55.7887"
+								},
+								{
+									"key": "lng",
+									"value": "49.1221"
+								},
+								{
+									"key": "apikey",
+									"value": "{{API_key}}"
+								},
+								{
+									"key": "distance",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Негативная проверка",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_URL}}v3.0/nearest_stations/?lat=55.7887&lng=49.1221&apikey=API_key&distance=50",
+							"host": [
+								"{{base_URL}}v3",
+								"0"
+							],
+							"path": [
+								"nearest_stations",
+								""
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "55.7887"
+								},
+								{
+									"key": "lng",
+									"value": "49.1221"
+								},
+								{
+									"key": "apikey",
+									"value": "API_key"
+								},
+								{
+									"key": "distance",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{API_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_key",
+			"value": "2e2f6640-8d64-4d6f-9b3c-f428879af3fb",
+			"type": "string"
+		},
+		{
+			"key": "base_URL",
+			"value": "https://api.rasp.yandex.net/",
+			"type": "string"
+		},
+		{
+			"key": "date",
+			"value": "2025-05-25",
+			"type": "string"
+		},
+		{
+			"key": "uid",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

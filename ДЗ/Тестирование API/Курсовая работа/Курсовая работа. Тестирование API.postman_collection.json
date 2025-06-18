@@ -1,0 +1,2072 @@
+{
+	"info": {
+		"_postman_id": "779a979f-64bc-46e3-a1b7-73c8da88ebd4",
+		"name": "Курсовая работа. Тестирование API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43611570"
+	},
+	"item": [
+		{
+			"name": "Позитивные проверки",
+			"item": [
+				{
+					"name": "Список событий",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3NjA3Mzg0NywiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749476073$j60$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"{{from}}\",\r\n    \"till\": \"{{till}}\",\r\n    \"onlyTypes\": [\r\n        \"slot\",\r\n        \"event\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}events",
+							"host": [
+								"{{baseURL}}events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 20;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									"\r",
+									"const randomDescriptionLength = 250;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b;token_global={{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startDate}}\",\r\n    \"endAt\": \"{{endDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Название 40 символов",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 40;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{description}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startAt}}\",\r\n    \"endAt\": \"{{endDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Название 1 символ",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 1;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{description}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startAt}}\",\r\n    \"endAt\": \"{{endDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Описание 500 символов",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomDescriptionLength = 500;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{title}}\",\r\n    \"startAt\": \"{{startAt}}\",\r\n    \"endAt\": \"{{endDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Описание 0 символов",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"{{title}}\",\r\n    \"startAt\": \"{{startAt}}\",\r\n    \"endAt\": \"{{endDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Описание 1 символ",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomDescriptionLength = 1;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{title}}\",\r\n    \"startAt\": \"{{startAt}}\",\r\n    \"endAt\": \"{{endDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Новое время",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{description}}\",\r\n    \"title\": \"{{title}}\",\r\n    \"startAt\": \"{{newStartDate}}\",\r\n    \"endAt\": \"{{newEndDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование события Цвет",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"//if backgroundColor:\"#F4F5F6\" then color:\"#81888D\"\r",
+									"//if backgroundColor:\"#FFF7C7\" then color:\"#FAC641\"\r",
+									"//if backgroundColor:\"#EBFDF2\" then color:\"#43B658\"\r",
+									"//if backgroundColor:\"#F9EBFF\" then color:\"#D478F1\"\r",
+									"\r",
+									"\r",
+									"const backgroundColors = ['#F4F5F6', '#FFF7C7', '#EBFDF2', '#F9EBFF'];\r",
+									"const randomIndex = Math.floor(Math.random() * backgroundColors.length);\r",
+									"const backgroundColor = backgroundColors[randomIndex];\r",
+									"\r",
+									"pm.environment.set('backgroundColor', backgroundColor);\r",
+									"let color;\r",
+									"\r",
+									"if (backgroundColor === '#F4F5F6') {\r",
+									"    color = '#81888D';\r",
+									"} else if (backgroundColor === '#FFF7C7') {\r",
+									"    color = '#FAC641';\r",
+									"} else if (backgroundColor === '#EBFDF2') {\r",
+									"    color = '#43B658';\r",
+									"} else if (backgroundColor === '#F9EBFF') {\r",
+									"    color = '#D478F1';\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('color', color);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MjAzNzcwMCwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749472050$j47$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"{{backgroundColor}}\",\r\n    \"color\": \"{{color}}\",\r\n    \"description\": \"{{description}}\",\r\n    \"title\": \"{{title}}\",\r\n    \"startAt\": \"{{newStartDate}}\",\r\n    \"endAt\": \"{{newEndDate}}\",\r\n    \"id\": {{id}},\r\n    \"oldStartAt\": \"{{newStartDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}updatePersonal",
+							"host": [
+								"{{baseURL}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление события",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 Edg/137.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b; token_global=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ3MDM2MDk5NSwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749470492$j58$l0$h0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{id}},\r\n    \"startAt\": \"{{newStartDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}removePersonal",
+							"host": [
+								"{{baseURL}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Негативные проверки",
+			"item": [
+				{
+					"name": "Создание события 2020 год",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 20;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									"\r",
+									"const randomDescriptionLength = 250;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b;token_global={{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{negativeStartDate}}\",\r\n    \"endAt\": \"{{negativeEndDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события Название 0 символов",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 0;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									"\r",
+									"const randomDescriptionLength = 250;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b;token_global={{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startDate}}\",\r\n    \"endAt\": \"{{endDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события Название 41 символ",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 41;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									"\r",
+									"const randomDescriptionLength = 250;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b;token_global={{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startDate}}\",\r\n    \"endAt\": \"{{endDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события Описание 501 символ",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 20;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									"\r",
+									"const randomDescriptionLength = 501;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b;token_global={{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startDate}}\",\r\n    \"endAt\": \"{{endDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события Черный цвет",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const russianAlphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';\r",
+									"const englishAlphabet = 'abcdefghijklmnopqrstuvwxyz';\r",
+									"const combinedAlphabet = englishAlphabet + russianAlphabet;\r",
+									"\r",
+									"const randomTitleLength = 20;\r",
+									"let randomTitle = '';\r",
+									"\r",
+									"for (let i = 0; i < randomTitleLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomTitle += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomTitle', randomTitle);\r",
+									"\r",
+									"const randomDescriptionLength = 250;\r",
+									"let randomDescription = '';\r",
+									"\r",
+									"for (let i = 0; i < randomDescriptionLength; i++) {\r",
+									"    const randomIndex = Math.floor(Math.random() * combinedAlphabet.length);\r",
+									"    randomDescription += combinedAlphabet[randomIndex];\r",
+									"}\r",
+									"\r",
+									"pm.environment.set('randomDescription', randomDescription);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"id\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"title\"\r",
+									"var value = pm.response.json().data.payload.payload.title\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"description\"\r",
+									"var value = pm.response.json().data.payload.payload.description\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "ru"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://teachers.skyeng.ru"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://teachers.skyeng.ru/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"136\", \"Microsoft Edge\";v=\"136\", \"Not.A/Brand\";v=\"99\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0"
+							},
+							{
+								"key": "Cookie",
+								"value": "_ym_uid=174946861084651185; _ym_d=1749468610; global_id=YWVzLTEyOC1jYmM%3D.2fS5XtUGV0T2a4dCtvVtfA%3D%3D.GNf7qLmqZIVapcIutKXxyOUZ87ESwOf9FxnZXLInUcw%3D; session_global=gbuqeogdo6go26tk3s19phjk4t; _ga=GA1.1.342209191.1749468613; _ym_isad=2; _ym_visorc=b;token_global={{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#000000\",\r\n    \"color\": \"#000000\",\r\n    \"description\": \"{{randomDescription}}\",\r\n    \"title\": \"{{randomTitle}}\",\r\n    \"startAt\": \"{{startDate}}\",\r\n    \"endAt\": \"{{endDate}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}createPersonal",
+							"host": [
+								"{{baseURL}}createPersonal"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjoiKzc5MTY1MDAyMjU1IiwibmFtZSI6Ilx1MDQxMFx1MDQzYlx1MDQzNVx1MDQzYVx1MDQ0MVx1MDQzNVx1MDQzOSIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6InYxSEQ1dkM4Szc3eUNleWJiTWRudlY2empNa1ZkMDFFIiwiYnJhbmQiOm51bGwsImV4cCI6MTc0OTU1NTAwNSwiYmlydGhkYXkiOiIyMDA2LTEwLTEwIiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE3NDk0Njg2MDMsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UUk1fVVBMT0FEX0ZJTEUiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RFQUNIRVJTX0NBQklORVRfQkFTRV9BQ0NFU1MiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciXX0.XxrDpQpY-2wFGpb-pMHmG7CMwdz2u5_DxGKPmPdDMh8BGC99Txkw3SK4fFWx-3yDFyal_dL3uRZyMVSH-8Lc5D6i2P9krqbaGkuATqCdgAFCNJW-3j2GDU9Duwx00dR9iO680u1QV4oE0fMMXMBSoZkdGeIPgmMnHLPDl2I50sc0JtJmE3bjI0DhwpFAADrRRsmX7HeLdOB9NwgTbJr6YT2pDQpu6Jb7G21vWGqYc4miS39sgvg7reZuPY_d6Y025UdzehTQH9kWNUXiKgLpv2MYXQLw6pMfFb6iuG9UXVYGlTFU_cdBf22x9Sn1LE_qLR26gh1YPpBzvbJu6zDaYAsakaXoUj2bkY37awWNNtmY_kYZyGHRqMBm-GTVi2vxR2kn1F2bziZL4DWu1-7qzcQIFD54ci0vKRp3e-cJc1BQAUKcbGnCRbyc_aydwT0qf6FjC877tIXSiFI7uZSGE8YB8k_6DgVMIRl_0F_npv5plzg2VXAGQGmo_J12jGBFyk57lA8N5u5EQuD65M0ShhbRrSaQrAWVsYU96UbtmvLSeB1_oExTUJLL7qMSgTs2dgscEvFCVfB2S1HtOYF-u94BZUzjCI5jnhAi638jd0dcOm64pdEdbI36fC2EHfTctyYeHKP9-PuMYkconzj_gg40SI11tMfMkeu_RNRHsE4; session_teachers_cabinet=019opn0vpftgfjjnbslnl1canc; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6ImM2Zjk3YWIzLTU0N2EtNGJhZS04YTE2LTcxYTgzOTBmYzI3MlIiLCJ1c2VySWQiOiIxNDg5NDI1MCIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTc0OTQ2ODYxMzM1OSwibGFzdEV2ZW50VGltZSI6MTc0OTQ2ODYxNDg2OSwiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS2.1.s1749468613$o1$g1$t1749468941$j59$l0$h0",
+			"type": "string"
+		},
+		{
+			"key": "startDate",
+			"value": "2025-06-11T15:00:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "endDate",
+			"value": "2025-06-11T15:30:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "newStartDate",
+			"value": "2025-06-11T18:00:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "newEndDate",
+			"value": "2025-06-11T18:30:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "title",
+			"value": ""
+		},
+		{
+			"key": "description",
+			"value": ""
+		},
+		{
+			"key": "startAt",
+			"value": ""
+		},
+		{
+			"key": "from",
+			"value": "2025-06-11T00:00:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "till",
+			"value": "2025-06-12T00:00:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "negativeStartDate",
+			"value": "2020-06-11T15:00:00+03:00",
+			"type": "string"
+		},
+		{
+			"key": "negativeEndDate",
+			"value": "2020-06-11T15:30:00+03:00",
+			"type": "string"
+		}
+	]
+}

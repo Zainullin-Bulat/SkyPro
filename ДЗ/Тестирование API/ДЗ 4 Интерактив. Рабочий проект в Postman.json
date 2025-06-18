@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "f4b83c5e-188c-471e-9c3a-cf2682a50a33",
+		"name": "YouGile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43611570"
+	},
+	"item": [
+		{
+			"name": "Авторизация",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"zainullinbd@gmail.com\",\r\n  \"password\": \"kokcJKE1993\",\r\n  \"name\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/companies",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"companies"
+					]
+				},
+				"description": "Generated from cURL: curl --request POST \\\r\n  --url https://ru.yougile.com/api-v2/auth/companies \\\r\n  --header 'Content-Type: application/json' \\\r\n  --data '{\r\n  \"login\": \"zainullinbd@gmail.com\",\r\n  \"password\": \"kokcJKE1993\",\r\n  \"name\": \"test\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Создать ключ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"zainullinbd@gmail.com\",\r\n  \"password\": \"kokcJKE1993\",\r\n  \"companyId\": \"9c8ff6b4-6904-4ff0-b650-bcfeadb9502a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/keys",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"keys"
+					]
+				},
+				"description": "Generated from cURL: curl --request POST \\\r\n  --url https://ru.yougile.com/api-v2/auth/keys \\\r\n  --header 'Content-Type: application/json' \\\r\n  --data '{\r\n  \"login\": \"zainullinbd@gmail.com\",\r\n  \"password\": \"kokcJKE1993\",\r\n  \"companyId\": \"9c8ff6b4-6904-4ff0-b650-bcfeadb9502a\"\r\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "Список проектов",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/projects",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects"
+					]
+				},
+				"description": "Generated from cURL: curl --request GET \\\r\n  --url https://ru.yougile.com/api-v2/projects /\r\n  --header 'Authorization: Bearer qyTROUsk+xRkKzjuY+1k4JMwlsgMhaajycVJb28SsXMimkiFI5dTh+nUJDGXgSzZ' \r\n  --header 'Content-Type: application/json'"
+			},
+			"response": []
+		},
+		{
+			"name": "Создать проект",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"projectID\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Новый проект\",\r\n    \"users\": {\r\n        \"06f6b049-d4d4-4923-8210-6a0efa95d30d\": \"admin\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/projects",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить проект",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Измененный проект\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/projects/{{projectID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects",
+						"{{projectID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверить проект",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"pm.test(\"Check title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Измененный проект\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/projects/{{projectID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"projects",
+						"{{projectID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать доску",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"boardID\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Новая доска\",\r\n  \"projectId\": \"{{projectID}}\",\r\n  \"stickers\": {\r\n    \"timer\": false,\r\n    \"deadline\": true,\r\n    \"stopwatch\": true,\r\n    \"timeTracking\": true,\r\n    \"assignee\": true,\r\n    \"repeat\": true\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/boards",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"boards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить доску",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Измененная доска\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/boards/{{boardID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"boards",
+						"{{boardID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверить доску",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"pm.test(\"Check title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Измененная доска\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/boards/{{boardID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"boards",
+						"{{boardID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать колонку",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"columnID\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Новая колонка\",\r\n    \"boardId\": \"{{boardID}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/columns",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"columns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить колонку",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Измененная колонка\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/columns/{{columnID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"columns",
+						"{{columnID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверить колонку",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"pm.test(\"Check title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.title).to.eql(\"Измененная колонка\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/columns/{{columnID}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"columns",
+						"{{columnID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать задачу",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"taskID\"\r",
+							"var value = pm.response.json().id\r",
+							"pm.collectionVariables.set(key, value)\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"{{$randomFileName}}\",\r\n  \"columnId\": \"{{columnID}}\",\r\n  \"description\": \"{{$randomPhrase}}\",\r\n  \"archived\": false,\r\n  \"completed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/tasks",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{API_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_key",
+			"value": "qyTROUsk+xRkKzjuY+1k4JMwlsgMhaajycVJb28SsXMimkiFI5dTh+nUJDGXgSzZ",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://ru.yougile.com/api-v2",
+			"type": "string"
+		},
+		{
+			"key": "projectID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "boardID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "columnID",
+			"value": ""
+		},
+		{
+			"key": "taskID",
+			"value": ""
+		}
+	]
+}
