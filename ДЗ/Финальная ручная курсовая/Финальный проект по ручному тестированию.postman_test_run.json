@@ -1,0 +1,261 @@
+{
+	"id": "c73a93a5-1e20-4b08-bc85-05bd88949630",
+	"name": "Финальный проект по ручному тестированию",
+	"timestamp": "2025-08-10T07:36:40.102Z",
+	"collection_id": "43611570-09b9e0d8-54d8-4443-9f1f-fe3edf363468",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 7,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-08-10T07:36:35.297Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c4072c58-73bd-4119-a7b5-5423946403cc",
+			"name": "Поиск по названию на кириллице",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=айфон&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000100000000000000000&showUnavailable=true&location=16000000100000000000000000",
+			"time": 798,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				798
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "5157fc54-3933-4214-8d8f-7b99ddc56104",
+			"name": "Поиск по названию на латинице",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=iphone&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000100000000000000000&showUnavailable=true&location=16000000100000000000000000",
+			"time": 741,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				741
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "96ece161-003c-4bbf-948c-185b9e4fde0b",
+			"name": "Поиск по названию с цифрами",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=16&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000100000000000000000&showUnavailable=true&location=16000000100000000000000000",
+			"time": 825,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				825
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "140049a2-00e0-40c3-a545-66b196022dd8",
+			"name": "Поиск по произвольному набору символов",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=*()^$%^%%^@%%@$%@&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000100000000000000000&showUnavailable=true&location=16000000100000000000000000",
+			"time": 54,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				54
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b4400779-b5bd-48b0-a5c5-38e3a77459e9",
+			"name": "Пустой поиск",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000100000000000000000&showUnavailable=true&location=16000000100000000000000000",
+			"time": 698,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				698
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "2610e825-62ec-439b-91ba-d7d973f6caf1",
+			"name": "Поиск без региона",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=айфон&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&showUnavailable=true",
+			"time": 104,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				104
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "565bb65b-47f0-4a5f-9c56-2c4105fbaaac",
+			"name": "Поиск с неактуальным регионом",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=айфон&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000&showUnavailable=true&location=16000000",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "0c00efca-f6fa-4cea-b3ec-f90b3dd7ab0f",
+			"name": "Поиск с другим методом",
+			"url": "https://shop.mts.ru/apigw/api/v2/search/products?st=айфон&project=shop&platform=web&strategy=advanced_xname%2Czero_queries&regionId=16000000100000000000000000&showUnavailable=true&location=16000000100000000000000000",
+			"time": 42,
+			"responseCode": {
+				"code": 405,
+				"name": "Method Not Allowed"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				42
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3434,
+	"collection": {
+		"requests": [
+			{
+				"id": "c4072c58-73bd-4119-a7b5-5423946403cc",
+				"method": "GET"
+			},
+			{
+				"id": "5157fc54-3933-4214-8d8f-7b99ddc56104",
+				"method": "GET"
+			},
+			{
+				"id": "96ece161-003c-4bbf-948c-185b9e4fde0b",
+				"method": "GET"
+			},
+			{
+				"id": "140049a2-00e0-40c3-a545-66b196022dd8",
+				"method": "GET"
+			},
+			{
+				"id": "b4400779-b5bd-48b0-a5c5-38e3a77459e9",
+				"method": "GET"
+			},
+			{
+				"id": "2610e825-62ec-439b-91ba-d7d973f6caf1",
+				"method": "GET"
+			},
+			{
+				"id": "565bb65b-47f0-4a5f-9c56-2c4105fbaaac",
+				"method": "GET"
+			},
+			{
+				"id": "0c00efca-f6fa-4cea-b3ec-f90b3dd7ab0f",
+				"method": "POST"
+			}
+		]
+	}
+}
