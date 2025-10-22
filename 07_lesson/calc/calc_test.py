@@ -17,7 +17,7 @@ def calculator(driver):
     return calc
 
 
-def test_02_calc(calculator):
+def test_calc(calculator):
     calculator.set_delay(45)
     calculator.click_button("7")
     calculator.click_button("+")
