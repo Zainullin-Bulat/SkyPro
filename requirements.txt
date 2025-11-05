@@ -3,3 +3,5 @@ selenium~=4.11.2
 requests~=2.31.0
 sqlalchemy
 psycopg2-binary
+allure-pytest>=2.9.0
+pytest-html>=3.0.0
